@@ -42,3 +42,11 @@ full_clean: rem_inst rem_build
 	-$(MAKE)  -C src  full_clean
 
 # -------------------------
+
+spkg:
+	git clean -fdx
+	gbp buildpackage --git-upstream-branch=master --git-debian-branch=ubuntu --git-ignore-new -S -tc -pgpg2 # '--git-upstream-tag=v%(version)s'
+
+dpkg:
+	git clean -fdx
+	gbp buildpackage --git-upstream-branch=master --git-debian-branch=ubuntu --git-ignore-new -b -us -ui -uc

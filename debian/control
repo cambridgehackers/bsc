@@ -1,0 +1,15 @@
+Source: bsc
+Section: devel
+Priority: optional
+Maintainer: Jamey Hicks <jamey.hicks@accelerated.tech>
+Standards-Version: 3.8.1
+Build-Depends: debhelper (>= 5), cdbs, dpatch, haskell-devscripts (>= 0.6.15+nmu1), ghc, ghc-prof, gperf, flex, bison, libghc-regex-compat-dev, libghc-syb-dev, libghc-old-time-dev, libghc-split-dev, cabal-install, tcl-dev, tk-dev, libfontconfig1-dev, libx11-dev, libxft-dev, itcl3-dev, itk3-dev
+
+Package: bsc
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: BSV compiler
+ This package provides a compiler and libraries for the BSV hardware description language.
+ See https://github.com/B-Lang-org/bsc for more information on Bluespec.
+ .
+ BSV long description goes here
