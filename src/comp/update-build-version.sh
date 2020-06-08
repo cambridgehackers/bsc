@@ -7,11 +7,13 @@ export TMOUT=1
 # GIT
 
 genGITBuildVersion () {
-    echo "module BuildVersion(buildVersion, buildVersionNum) where" > BuildVersion.hs.new;
+    echo "module BuildVersion(buildVersion, buildVersionNum, compilerVersion) where" > BuildVersion.hs.new;
     echo buildVersion :: String >> BuildVersion.hs.new;
     echo buildVersion = \"$1\" >> BuildVersion.hs.new;
     echo buildVersionNum :: Integer >> BuildVersion.hs.new;
     echo buildVersionNum = 0x$1 >> BuildVersion.hs.new;
+    echo compilerVersion :: String >> BuildVersion.hs.new;
+    echo compilerVersion = $COMPILERVERSION >> BuildVersion.hs.new;
     if test -f BuildVersion.hs; then
 	if !(diff BuildVersion.hs BuildVersion.hs.new); then
             mv BuildVersion.hs.new BuildVersion.hs;

@@ -2,7 +2,7 @@ module Version(bluespec, version, versionStr, versionname, versiondate, copyrigh
                buildnum
               ) where
 
-import BuildVersion(buildVersion, buildVersionNum)
+import BuildVersion(buildVersion, buildVersionNum, compilerVersion)
 
 {-# NOINLINE bluespec #-}
 {-# NOINLINE versionname #-}
@@ -20,7 +20,7 @@ bluespec = "Bluespec"
 --       (eg. 2019.05.beta2 or 2017.07.A)
 --
 versionname, versiondate :: String
-versionname = ""
+versionname = compilerVersion
 versiondate = ""
 
 buildnum :: Integer
