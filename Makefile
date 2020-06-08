@@ -4,6 +4,8 @@ TOP := $(PWD)
 PREFIX   ?= $(TOP)/inst
 BUILDDIR ?= $(TOP)/build
 
+export COMPILERVERSION = OPEN2020-06-08
+
 .PHONY: all
 all: install
 

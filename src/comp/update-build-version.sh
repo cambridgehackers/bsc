@@ -13,7 +13,7 @@ genGITBuildVersion () {
     echo buildVersionNum :: Integer >> BuildVersion.hs.new;
     echo buildVersionNum = 0x$1 >> BuildVersion.hs.new;
     echo compilerVersion :: String >> BuildVersion.hs.new;
-    echo compilerVersion = $COMPILERVERSION >> BuildVersion.hs.new;
+    echo compilerVersion = \"$COMPILERVERSION\" >> BuildVersion.hs.new;
     if test -f BuildVersion.hs; then
 	if !(diff BuildVersion.hs BuildVersion.hs.new); then
             mv BuildVersion.hs.new BuildVersion.hs;

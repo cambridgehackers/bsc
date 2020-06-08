@@ -249,7 +249,6 @@ EXTRAOBJS = $(EXTRAOBJNORMAL) $(EXTRAOBJPROF)
 .PHONY: all
 all: $(EXES)
 
-export COMPILERVERSION = "OPEN2020-06-07"
 BuildVersion.hs:
 	./update-build-version.sh
 
